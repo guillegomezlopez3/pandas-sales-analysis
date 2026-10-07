@@ -15,10 +15,10 @@ def build_report(path: str) -> str:
         "# Sales report",
         f"- Orders: {k['orders']:,}\n- Revenue: {k['revenue']:,.2f}\n"
         f"- Average order value: {k['avg_order_value']:,.2f}\n- Units sold: {k['units']:,}",
-        "## Revenue by region", a.revenue_by(df, "region").to_markdown(floatfmt=",.2f"),
-        "## Revenue by category", a.revenue_by(df, "category").to_markdown(floatfmt=",.2f"),
-        "## Top 5 products", a.top_products(df).to_markdown(floatfmt=",.2f"),
-        "## Monthly trend", a.monthly_trend(df).to_markdown(floatfmt=",.2f"),
+        "## Revenue by region", a.revenue_by(df, "region").to_markdown(floatfmt=",.2f", intfmt=","),
+        "## Revenue by category", a.revenue_by(df, "category").to_markdown(floatfmt=",.2f", intfmt=","),
+        "## Top 5 products", a.top_products(df).to_markdown(floatfmt=",.2f", intfmt=","),
+        "## Monthly trend", a.monthly_trend(df).to_markdown(floatfmt=",.2f", intfmt=","),
     ]
     return "\n\n".join(parts) + "\n"
 
